@@ -28,7 +28,7 @@ header {
 }
 
 header img {
-  width: 200px;
+  width: 14rem;
 }
 
 nav {
@@ -81,8 +81,9 @@ nav ul li a {
 }
 
 .container .home-img {
-  width: 600px;
-  height: 400px;
+  width: 100%;        /* Scales down smoothly to fit any small screen container */
+  max-width: 20rem;   /* Stops growing once it hits 400px so it doesn't get pixelated */
+  height: auto;
   border-radius: 20% 0;
 }
 
@@ -115,8 +116,9 @@ nav ul li a {
 }
 
 .about-img {
-  width: 400px;
-  height: 500px;
+  width: 100%;        /* Scales down smoothly to fit any small screen container */
+  max-width: 25rem;   /* Stops growing once it hits 400px so it doesn't get pixelated */
+  height: auto;
 }
 
 .about-content {
@@ -144,57 +146,57 @@ nav ul li a {
   color: var(--neutral-color);
 }
 
-.info{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 30%;
-    padding: 45px 15px 45px 15px;
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 30%;
+  padding: 45px 15px 45px 15px;
 }
 
-.info img{
-    width: 50px;
+.info img {
+  width: 50px;
 }
 
-.info h3{
-    color: var(--orange-color);
+.info h3 {
+  color: var(--orange-color);
 }
 
-.info li{
-    color: var(--nav-color);
+.info li {
+  color: var(--nav-color);
 }
 
-.links{
-    width: 40%;
-    border-right: 1px solid #1a365d;
-    border-left:  1px solid #1a365d;
-    display: flex;
-    gap: 70px;
-    padding: 35px 0 55px 45px;
+.links {
+  width: 40%;
+  border-right: 1px solid #1a365d;
+  border-left: 1px solid #1a365d;
+  display: flex;
+  gap: 70px;
+  padding: 35px 0 55px 45px;
 }
 
-.links ul{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.links a{
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 20px;
-    color: rgb(52, 52, 52);
+.links a {
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 20px;
+  color: rgb(52, 52, 52);
 }
 
-.part{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+.part {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.part h2{
-    margin-bottom: 15px;
+.part h2 {
+  margin-bottom: 15px;
 }
 
 .details {
@@ -229,11 +231,79 @@ nav ul li a {
   margin-top: 30px;
 }
 
-footer{
-    background-color: var(--nav-color);
-    color: var(--background-color);
+footer {
+  background-color: var(--nav-color);
+  color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+}
+
+.nav-toggle {
+  display: none;
+  background-color: #e67e22;
+  width: 30px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 3.5px;
+}
+
+.nav-toggle span {
+  width: 20px;
+  height: 2px;
+  background-color: #cfcbc2;
+}
+
+@media (max-width: 64rem) {
+
+  header{
+    padding: 0.625rem 1.25rem;
+    position: relative;
+  }
+
+  .nav-toggle {
+    display: flex; /* Displays the hamburger button properly */
+  }
+
+  /* Target the nav container via ID to hide/show it */
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #1a365d; /* Match your --nav-color theme */
+    padding: 1rem;
+    text-align: center;
+    border-radius: 0; /* Remove rounded corners on mobile dropdown */
+  }
+
+  /* Clean up internal list styles for vertical stacking */
+  .nav-links ul {
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 0;
+    order: 1; /* Ensures your navigation links stay on top */
+  }
+
+  /* When JS adds the active class to #nav-links, show the container */
+  .nav-links.active {
+    display: flex;
+  }
+
+   header > a[href="donate.html"] {
+    display: none; /* Hides the original standalone desktop header link placement */
+  }
+
+  .container{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 40px;
+  }
+
 }

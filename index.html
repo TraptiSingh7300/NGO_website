@@ -13,10 +13,17 @@
   </head>
   <body>
     <header>
-      <a href="index.html"
-        ><img src="images/she_can_logo.webp" alt="Logo"
-      /></a>
-      <nav>
+      <a href="index.html">
+        <img src="images/she_can_logo.webp" alt="Logo" />
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="toggle navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav id="nav-links">
         <ul>
           <li><a href="index.html#home">Home</a></li>
           <li><a href="index.html#about">About Us</a></li>
@@ -24,7 +31,8 @@
           <li><a href="#contact">Contact Us</a></li>
         </ul>
       </nav>
-      <a href="donate.html"><button class="btn">Donate</button></a>
+
+      <a href="donate.html"><button class="btn" id="d-btn">Donate</button></a>
     </header>
     <main>
       <section id="home">
@@ -44,9 +52,7 @@
             </p>
             <p>NGO Registered Under the Indian Society Act, 1860</p>
             <div class="btn-group">
-              <a href="donate.html"
-                ><button class="btn">Donate Now</button></a
-              >
+              <a href="donate.html"><button class="btn">Donate Now</button></a>
               <a href="#contact"><button class="btn">Contact Us</button></a>
             </div>
           </div>
